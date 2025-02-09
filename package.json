@@ -1,0 +1,28 @@
+{
+	"name": "express-server",
+	"version": "1.0.0",
+	"main": "index.js",
+	"scripts": {
+		"start": "ts-node backend/src/index.ts",
+		"build": "tsc",
+		"serve": "node dist/index.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/BrahimS/deepseek-test.git"
+	},
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/BrahimS/deepseek-test/issues"
+	},
+	"homepage": "https://github.com/BrahimS/deepseek-test#readme",
+	"description": "",
+	"devDependencies": {
+		"@types/express": "^5.0.0",
+		"@types/node": "^22.13.1",
+		"express": "^4.21.2",
+		"ts-node": "^10.9.2",
+		"typescript": "^5.7.3"
+	}
+}
