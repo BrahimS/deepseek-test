@@ -1,7 +1,9 @@
 import express, { Request, Response } from 'express';
+import cors from 'cors';
 import axios from 'axios';
 
 const app = express();
+app.use(cors());
 app.use(express.json());
 
 app.get('/api/deepseek', async (req: Request, res: Response) => {
