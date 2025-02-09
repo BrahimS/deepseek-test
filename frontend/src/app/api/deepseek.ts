@@ -9,6 +9,7 @@ export const getDeepSeekResponse = async (messages: Message[]): Promise<string> 
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        'Authorization': `Bearer ${process.env.DEEPSEEK_API_KEY}`,
       },
       body: JSON.stringify({ messages }),
     });

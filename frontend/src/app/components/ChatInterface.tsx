@@ -32,8 +32,8 @@ export const ChatInterface = () => {
   };
 
   return (
-    <div className="chat-container">
-      <div className="messages">
+    <div className="flex flex-col w-screen  p-12 ">
+      <div className="">
         {messages.map((msg, index) => (
           <div key={index} className={`message ${msg.role}`}>
             {msg.content}
@@ -41,14 +41,15 @@ export const ChatInterface = () => {
         ))}
       </div>
       
-      <form onSubmit={handleSubmit} className="input-form">
+      <form onSubmit={handleSubmit} className=" flex flex-row pt-6 h-full">
         <input
+          className="flex align-middle items-center p-4 text-gray-500 w-full"
           value={input}
           onChange={(e) => setInput(e.target.value)}
           disabled={isLoading}
           placeholder="Type your message..."
         />
-        <button type="submit" disabled={isLoading}>
+        <button type="submit" disabled={isLoading} className='bg-blue-900 text-white px-4 py-4'>
           {isLoading ? 'Sending...' : 'Send'}
         </button>
       </form>

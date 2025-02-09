@@ -1,7 +1,9 @@
 import express, { Request, Response } from 'express';
+import dotenv from 'dotenv';
 import cors from 'cors';
 import axios from 'axios';
 
+dotenv.config();
 const app = express();
 app.use(cors());
 app.use(express.json());
@@ -13,7 +15,7 @@ app.get('/api/deepseek', async (req: Request, res: Response) => {
 		const response = await axios.post(
 			`${URL}`,
 			{
-				model: 'deepseek-r1',
+				model: 'deepseek-chat',
 				message,
 				temperature: 0.7,
 			},
@@ -31,7 +33,7 @@ app.get('/api/deepseek', async (req: Request, res: Response) => {
 	}
 });
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
 	console.log(`Server running on port ${PORT}`);
 });
